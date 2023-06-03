@@ -6,11 +6,13 @@ import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
+import static com.mlc.my_little_cookie2.common.CustomUUID.uuid;
+
 @Entity
 public class User extends BaseEntity {
 
     @Id
-    public String id;
+    public String id = uuid();
 
     public String name;
 

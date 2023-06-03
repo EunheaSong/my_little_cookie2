@@ -6,11 +6,13 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+import static com.mlc.my_little_cookie2.common.CustomUUID.uuid;
+
 @Entity
 public class Pet extends BaseEntity {
 
     @Id
-    public String id;
+    public String id = uuid();
 
     public String name;
 
