@@ -40,12 +40,12 @@ public class JwtProvider {
             claims.put("nickname", user.getNickname());
             Date now = new Date();
             token = Jwts.builder()
-                    .setClaims(claims)
-                    .setExpiration(new Date(now.getTime() + expiredSec * expiredMin))
-                    .setIssuedAt(now)
-                    .signWith(SignatureAlgorithm.HS256, secretKey)
-                    .compact();
-        } catch (Exception e){
+                .setClaims(claims)
+                .setExpiration(new Date(now.getTime() + expiredSec * expiredMin))
+                .setIssuedAt(now)
+                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .compact();
+        } catch (Exception e) {
             log.error(Arrays.toString(e.getStackTrace()));
         }
         return token;

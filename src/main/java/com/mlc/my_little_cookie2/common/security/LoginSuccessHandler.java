@@ -11,7 +11,6 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 
     public static final String TOKEN_TYPE = "BEARER";
 
-
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response,
                                         final Authentication authentication) {

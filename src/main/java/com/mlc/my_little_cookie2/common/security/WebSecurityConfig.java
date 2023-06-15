@@ -38,12 +38,12 @@ class WebSecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .sessionManagement((sessionManagement) ->
-                    sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .addFilterBefore(loginFilter(), UsernamePasswordAuthenticationFilter.class)
             .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class)
             .authorizeHttpRequests((authorizeRequests) ->
-                    authorizeRequests.anyRequest().permitAll()
+                authorizeRequests.anyRequest().permitAll()
             );
 
         return http.build();
@@ -57,28 +57,13 @@ class WebSecurityConfig {
         loginFilter.afterPropertiesSet();
         return loginFilter;
     }
+
     @Bean
     public LoginSuccessHandler loginSuccessHandler() {
         return new LoginSuccessHandler();
     }
 
-//    @Bean
-//    public JwtAuthFilter jwtFilter() {
-//        List<String> skipPathList = new ArrayList<>();
-//
-//        FilterSkipMatcher matcher = new FilterSkipMatcher(
-//                skipPathList,
-//                "/**"
-//        );
-//
-//        JwtAuthFilter filter = new JwtAuthFilter(
-//                matcher,
-//                headerTokenExtractor
-//        );
-//        filter.setAuthenticationManager(super.authenticationManagerBean());
-//
-//        return filter;
-//    }
+
 
     public AuthenticationManager authenticationManager() {
         return authentication -> null;
@@ -106,13 +91,13 @@ class WebSecurityConfig {
         skipPathList.add("GET,/user/kakao/callback"); //카카오 소셜 로그인 허용
 
         FilterSkipMatcher matcher = new FilterSkipMatcher(
-                skipPathList,
-                "/**"
+            skipPathList,
+            "/**"
         );
 
         JwtAuthFilter filter = new JwtAuthFilter(
-                matcher,
-                headerTokenExtractor
+            matcher,
+            headerTokenExtractor
         );
         filter.setAuthenticationManager(authenticationManager());
 

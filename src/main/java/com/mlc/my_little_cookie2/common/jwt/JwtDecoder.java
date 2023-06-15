@@ -19,7 +19,7 @@ public class JwtDecoder {
 
     private final UserDetailsServiceImpl userDetailsServiceImpl;
 
-    public JwtDecoder(UserDetailsServiceImpl userDetailsServiceImpl){
+    public JwtDecoder(UserDetailsServiceImpl userDetailsServiceImpl) {
         this.userDetailsServiceImpl = userDetailsServiceImpl;
     }
 

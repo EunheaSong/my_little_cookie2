@@ -18,7 +18,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     public LoginFilter(final AuthenticationManager authenticationManager) {
         super.setAuthenticationManager(authenticationManager);
         objectMapper = new ObjectMapper()
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     @Override

@@ -20,8 +20,8 @@ public class JwtAuthFilter extends AbstractAuthenticationProcessingFilter {
     private final HeaderTokenExtractor extractor;
 
     public JwtAuthFilter(
-            RequestMatcher requiresAuthenticationRequestMatcher,
-            HeaderTokenExtractor extractor
+        RequestMatcher requiresAuthenticationRequestMatcher,
+        HeaderTokenExtractor extractor
     ) {
         super(requiresAuthenticationRequestMatcher);
 
@@ -38,10 +38,10 @@ public class JwtAuthFilter extends AbstractAuthenticationProcessingFilter {
 
     @Override
     protected void successfulAuthentication(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain chain,
-            Authentication authResult
+        HttpServletRequest request,
+        HttpServletResponse response,
+        FilterChain chain,
+        Authentication authResult
     ) throws IOException, ServletException {
         /*
          *  SecurityContext 사용자 Token 저장소를 생성합니다.
@@ -54,16 +54,16 @@ public class JwtAuthFilter extends AbstractAuthenticationProcessingFilter {
 
         // FilterChain chain 해당 필터가 실행 후 다른 필터도 실행할 수 있도록 연결실켜주는 메서드
         chain.doFilter(
-                request,
-                response
+            request,
+            response
         );
     }
 
     @Override
     protected void unsuccessfulAuthentication(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            AuthenticationException failed
+        HttpServletRequest request,
+        HttpServletResponse response,
+        AuthenticationException failed
     ) throws IOException, ServletException {
         /*
          *	로그인을 한 상태에서 Token값을 주고받는 상황에서 잘못된 Token값이라면
@@ -73,9 +73,9 @@ public class JwtAuthFilter extends AbstractAuthenticationProcessingFilter {
         SecurityContextHolder.clearContext();
 
         super.unsuccessfulAuthentication(
-                request,
-                response,
-                failed
+            request,
+            response,
+            failed
         );
     }
 }
