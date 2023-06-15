@@ -1,15 +1,15 @@
 package com.mlc.my_little_cookie2.common.user.repository;
 
-import com.mlc.my_little_cookie2.common.user.domain.User;
+import com.mlc.my_little_cookie2.common.user.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String> {
+public interface MemberRepository extends JpaRepository<Member, String> {
 
-    Optional<User> findByName(String name);
+    Optional<Member> findByName(String name);
 
 
 }

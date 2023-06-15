@@ -13,7 +13,7 @@ import static com.mlc.my_little_cookie2.common.CustomUUID.uuid;
 @Entity
 @Getter
 @NoArgsConstructor
-public class User extends BaseEntity {
+public class Member extends BaseEntity {
 
     @Id
     public String id = uuid();

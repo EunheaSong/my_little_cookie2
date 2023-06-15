@@ -1,6 +1,6 @@
 package com.mlc.my_little_cookie2.common.security;
 
-import com.mlc.my_little_cookie2.common.user.domain.User;
+import com.mlc.my_little_cookie2.common.user.domain.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,10 +8,10 @@ import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
 
-    private final User user;
+    private final Member member;
 
-    public UserDetailsImpl(User user) {
-        this.user = user;
+    public UserDetailsImpl(Member member) {
+        this.member = member;
     }
 
     public String getId() {

@@ -1,18 +1,11 @@
 package com.mlc.my_little_cookie2.common.jwt;
 
 import com.mlc.my_little_cookie2.common.security.UserDetailsImpl;
-import com.mlc.my_little_cookie2.common.security.UserDetailsServiceImpl;
-import com.mlc.my_little_cookie2.common.user.domain.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

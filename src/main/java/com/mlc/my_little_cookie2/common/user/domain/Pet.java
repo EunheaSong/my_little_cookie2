@@ -29,6 +29,6 @@ public class Pet extends BaseEntity {
     public Boolean isRainbowBridge;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    public User user;
+    public Member member;
 
 }
